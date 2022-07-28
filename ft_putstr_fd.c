@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 20:39:08 by eleotard          #+#    #+#             */
-/*   Updated: 2022/04/11 15:57:54 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/07/29 01:03:57 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	int	i;
+
+	i = 0;
 	if (!s)
 		return ;
-	while (*s)
+	while (s[i])
 	{
-		write(fd, s, 1);
-		s++;
+		ft_putchar_fd(s[i], fd);
+		i++;
 	}
 }
